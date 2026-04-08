@@ -6,7 +6,13 @@
   <title>Jupyter Notebook</title>
   <meta name="description" content="A structured academic project repository with secure unlock access and categorized code tables." />
   <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
   <style>
+    .logo-img {
+  height: 32px;   /* adjust as needed */
+  width: auto;
+  display: block;
+}
     :root{--orange:#f37726;--blue:#337ab7;--line:#e5e5e5;--text:#333;--muted:#777;--soft2:#fafafa}
     *{box-sizing:border-box}
     body{margin:0;background:#fff;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;color:var(--text)}
@@ -55,7 +61,10 @@
 </head>
 <body>
   <header class="top">
-    <div class="logo"><span class="orbit"></span><span>jupyter</span></div>
+    <div class="logo">
+  <img src="logo.png" alt="Logo" class="logo-img">
+
+</div>
     <button id="lockBtn" class="lock-btn">🔒</button>
   </header>
 
