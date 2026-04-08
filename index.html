@@ -39,7 +39,6 @@
     .card{border:1px solid var(--line);border-radius:4px;overflow:hidden;margin-top:14px}
     .card-h{padding:10px 12px;background:#fafafa;border-bottom:1px solid var(--line)}
     .card-h h3{margin:0;font-size:18px;font-weight:500}
-    .note{padding:10px 12px;font-size:13px;line-height:1.5;border-bottom:1px solid var(--line);background:#fff}
     .switch-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 0}
     .switch-tab{border:1px solid #d7d7d7;background:#f7f7f7;border-radius:20px;padding:7px 14px;font-size:13px;cursor:pointer}
     .switch-tab.active{background:#fff3ea;border-color:#f2b183;color:#b45309;font-weight:600}
@@ -52,7 +51,6 @@
     .unlock-error{margin-top:8px;color:#c62828;font-size:12px}
     .muted{color:#888}
     .footer{padding:14px 0 2px;color:#9a9a9a;font-size:12px;text-align:center}
-    .small-links a{display:inline-block;margin:2px 6px 2px 0}
   </style>
 </head>
 <body>
@@ -106,73 +104,105 @@
           <button class="switch-tab" data-target="tab-wda" type="button">WDA</button>
         </div>
 
+        <!-- DL -->
         <div id="tab-dl" class="tab-panel">
           <div class="card">
             <div class="card-h"><h3>DL</h3></div>
             <table>
-              <thead><tr><th style="width:6%">#</th><th style="width:64%">Aim</th><th style="width:30%">Code Link</th></tr></thead>
-              <tbody>
-                <tr><td>1</td><td>Implement Feed-forward Neural Network and train the network with different optimizers and compare the results.</td><td><a class="link" href="DL/practical1.py" download>Download</a></td></tr>
-                <tr><td>2</td><td>Write a Program to implement regularization to prevent the model from overfitting.</td><td><a class="link" href="DL/practical2.py" download>Download</a></td></tr>
-                <tr><td>3</td><td>Implement deep learning for recognizing classes for datasets like CIFAR10 images.</td><td><a class="link" href="DL/practical3.py" download>Download</a></td></tr>
-                <tr><td>4</td><td>Implement deep learning for autoencoder prediction from test data.</td><td><a class="link" href="DL/practical4.py" download>Download</a></td></tr>
-                <tr><td>5</td><td>Implement Neural Network for Digit Recognition on the MNIST Dataset.</td><td><a class="link" href="DL/practical5.py" download>Download</a></td></tr>
-                <tr><td>6</td><td>Implement Transfer Learning on a suitable dataset.</td><td><a class="link" href="DL/practical6.py" download>Download</a></td></tr>
-                <tr><td>7</td><td>Implement a Generative Adversarial Network for synthetic shapes.</td><td><a class="link" href="DL/practical7.py" download>Download</a></td></tr>
-                <tr><td>8</td><td>Implement a simple recurrent neural network.</td><td><a class="link" href="DL/practical8.py" download>Download</a></td></tr>
-                <tr><td>9</td><td>Implement LSTM for sentiment analysis.</td><td><a class="link" href="DL/practical9.py" download>Download</a></td></tr>
+              <thead>
                 <tr>
-                  <td>10</td>
-                  <td>Object detection from image/video.</td>
-                  <td class="small-links">
-                    <a class="link" href="DL/practical10A.py" download>10A.py</a>
-                    <a class="link" href="DL/practical10B.py" download>10B.py</a>
-                    <a class="link" href="DL/yolov3.cfg" download>yolov3.cfg</a>
-                    <a class="link" href="DL/dog.jpg" download>dog.jpg</a>
-                  </td>
+                  <th style="width:22%">Topic</th>
+                  <th style="width:20%">Short Name</th>
+                  <th style="width:14%">Sub-Question</th>
+                  <th style="width:24%">Quick Recall Name</th>
+                  <th style="width:20%">Link</th>
                 </tr>
+              </thead>
+              <tbody>
+                <tr><td>Feed Forward NN</td><td>FFNN Optimizers</td><td>Q1</td><td>SGD vs Adam</td><td><a class="link" href="DL/sgd_adam.py" download>Download</a></td></tr>
+                <tr><td>Feed Forward NN</td><td>FFNN Optimizers</td><td>Q2</td><td>SGD vs RMSProp</td><td><a class="link" href="DL/sgd_rmsprop.py" download>Download</a></td></tr>
+                <tr><td>Feed Forward NN</td><td>FFNN Optimizers</td><td>Q3</td><td>Adam vs RMSProp</td><td><a class="link" href="DL/adam_rmsprop.py" download>Download</a></td></tr>
+                <tr><td>Regularization</td><td>Overfitting Control</td><td>Q1</td><td>L2 Regularization</td><td><a class="link" href="DL/l2_regularization.py" download>Download</a></td></tr>
+                <tr><td>Regularization</td><td>Overfitting Control</td><td>Q2</td><td>Dropout</td><td><a class="link" href="DL/dropout_regularization.py" download>Download</a></td></tr>
+                <tr><td>CNN Classification</td><td>CNN Classification</td><td>Q1</td><td>CIFAR CNN</td><td><a class="link" href="DL/cifar_cnn.py" download>Download</a></td></tr>
+                <tr><td>CNN Classification</td><td>CNN Classification</td><td>Q2</td><td>MNIST CNN</td><td><a class="link" href="DL/mnist_cnn.py" download>Download</a></td></tr>
+                <tr><td>CNN Classification</td><td>CNN Classification</td><td>Q3</td><td>Fashion CNN</td><td><a class="link" href="DL/fashion_cnn.py" download>Download</a></td></tr>
+                <tr><td>Autoencoder</td><td>Data Reconstruction</td><td>Q1</td><td>MNIST Autoencoder</td><td><a class="link" href="DL/mnist_autoencoder.py" download>Download</a></td></tr>
+                <tr><td>Autoencoder</td><td>Data Reconstruction</td><td>Q2</td><td>CIFAR Autoencoder</td><td><a class="link" href="DL/cifar_autoencoder.py" download>Download</a></td></tr>
+                <tr><td>Digit Recognition</td><td>MNIST FFNN</td><td>Q1</td><td>Digit Recognition</td><td><a class="link" href="DL/mnist_ffnn.py" download>Download</a></td></tr>
+                <tr><td>Transfer Learning</td><td>VGG16 Transfer</td><td>Q1</td><td>Cats vs Dogs</td><td><a class="link" href="DL/vgg16_transfer_learning.py" download>Download</a></td></tr>
+                <tr><td>GAN</td><td>GAN Generation</td><td>Q1</td><td>MNIST GAN</td><td><a class="link" href="DL/mnist_gan.py" download>Download</a></td></tr>
+                <tr><td>GAN</td><td>GAN Generation</td><td>Q2</td><td>Fashion GAN</td><td><a class="link" href="DL/fashion_gan.py" download>Download</a></td></tr>
+                <tr><td>RNN</td><td>Time Series RNN</td><td>Q1</td><td>Rainfall RNN</td><td><a class="link" href="DL/rainfall_rnn.py" download>Download</a></td></tr>
+                <tr><td>RNN</td><td>Time Series RNN</td><td>Q2</td><td>Temperature RNN</td><td><a class="link" href="DL/temperature_rnn.py" download>Download</a></td></tr>
+                <tr><td>LSTM</td><td>Sentiment LSTM</td><td>Q1</td><td>NLP Sentiment</td><td><a class="link" href="DL/sentiment_lstm.py" download>Download</a></td></tr>
+                <tr><td>YOLO</td><td>Object Detection</td><td>Q1</td><td>YOLO Image</td><td><a class="link" href="DL/yolo_image_detection.py" download>Download</a></td></tr>
+                <tr><td>YOLO</td><td>Object Detection</td><td>Q2</td><td>YOLO Video</td><td><a class="link" href="DL/yolo_video_detection.py" download>Download</a></td></tr>
               </tbody>
             </table>
           </div>
         </div>
 
+        <!-- WEB3 -->
         <div id="tab-web3" class="tab-panel hidden">
           <div class="card">
             <div class="card-h"><h3>WEB3</h3></div>
             <table>
-              <thead><tr><th style="width:6%">#</th><th style="width:64%">Aim</th><th style="width:30%">Code Link</th></tr></thead>
+              <thead>
+                <tr>
+                  <th style="width:10%">No.</th>
+                  <th style="width:40%">Practical Name (Short Idea)</th>
+                  <th style="width:22%">Short Name</th>
+                  <th style="width:10%">Lang</th>
+                  <th style="width:18%">Link</th>
+                </tr>
+              </thead>
               <tbody>
-                <tr><td>1</td><td>Install and understand required tools and platforms.</td><td><a class="link" href="WEB3/practical1.py" download>Download</a></td></tr>
-                <tr><td>2</td><td>Create and deploy a blockchain network.</td><td><a class="link" href="WEB3/practical2.py" download>Download</a></td></tr>
-                <tr><td>3</td><td>Interact with a blockchain network via app.</td><td><a class="link" href="WEB3/practical3.py" download>Download</a></td></tr>
-                <tr><td>4</td><td>Deploy an asset-transfer app.</td><td><a class="link" href="WEB3/practical4.py" download>Download</a></td></tr>
-                <tr><td>5</td><td>Track fitness club rewards.</td><td><a class="link" href="WEB3/practical5.py" download>Download</a></td></tr>
-                <tr><td>6</td><td>Build rewards tracking web app.</td><td><a class="link" href="WEB3/practical6.py" download>Download</a></td></tr>
-                <tr><td>7</td><td>Car auction network with Fabric Node SDK.</td><td><a class="link" href="WEB3/practical7.py" download>Download</a></td></tr>
-                <tr><td>8</td><td>Develop IoT asset tracking blockchain app.</td><td><a class="link" href="WEB3/practical8.py" download>Download</a></td></tr>
-                <tr><td>9</td><td>Global finance blockchain application.</td><td><a class="link" href="WEB3/practical9.py" download>Download</a></td></tr>
-                <tr><td>10</td><td>Voting application using Hyperledger and Ethereum.</td><td><a class="link" href="WEB3/practical10.py" download>Download</a></td></tr>
+                <tr><td>1</td><td>Blockchain + Validation</td><td>block_valid</td><td>py</td><td><a class="link" href="WEB3/block_valid.py" download>Download</a></td></tr>
+                <tr><td>2</td><td>Solidity Variables</td><td>sol_var</td><td>sol</td><td><a class="link" href="WEB3/sol_var.sol" download>Download</a></td></tr>
+                <tr><td>3</td><td>Transactions + Blockchain</td><td>txn_query</td><td>py</td><td><a class="link" href="WEB3/txn_query.py" download>Download</a></td></tr>
+                <tr><td>4</td><td>Solidity Operators</td><td>sol_ops</td><td>sol</td><td><a class="link" href="WEB3/sol_ops.sol" download>Download</a></td></tr>
+                <tr><td>5</td><td>Asset Transfer App</td><td>asset_transfer</td><td>py</td><td><a class="link" href="WEB3/asset_transfer.py" download>Download</a></td></tr>
+                <tr><td>6</td><td>While Loop Array Init</td><td>while_array</td><td>sol</td><td><a class="link" href="WEB3/while_array.sol" download>Download</a></td></tr>
+                <tr><td>7</td><td>Fitness Rewards System</td><td>reward_chain</td><td>py</td><td><a class="link" href="WEB3/reward_chain.py" download>Download</a></td></tr>
+                <tr><td>8</td><td>Do-While Loop</td><td>do_while</td><td>sol</td><td><a class="link" href="WEB3/do_while.sol" download>Download</a></td></tr>
+                <tr><td>9</td><td>Reward Tracking Web App</td><td>reward_trace</td><td>py</td><td><a class="link" href="WEB3/reward_trace.py" download>Download</a></td></tr>
+                <tr><td>10</td><td>While Loop Sequential Init</td><td>while_init</td><td>sol</td><td><a class="link" href="WEB3/while_init.sol" download>Download</a></td></tr>
+                <tr><td>11</td><td>Car Auction System</td><td>car_auction</td><td>py</td><td><a class="link" href="WEB3/car_auction.py" download>Download</a></td></tr>
+                <tr><td>12</td><td>If Condition</td><td>if_check</td><td>sol</td><td><a class="link" href="WEB3/if_check.sol" download>Download</a></td></tr>
+                <tr><td>13</td><td>IoT Asset Tracking</td><td>iot_track</td><td>py</td><td><a class="link" href="WEB3/iot_track.py" download>Download</a></td></tr>
+                <tr><td>14</td><td>If-Else Condition</td><td>if_else</td><td>sol</td><td><a class="link" href="WEB3/if_else.sol" download>Download</a></td></tr>
+                <tr><td>15</td><td>Global Finance App</td><td>finance_chain</td><td>py</td><td><a class="link" href="WEB3/finance_chain.py" download>Download</a></td></tr>
+                <tr><td>16</td><td>Voting Application</td><td>vote_chain</td><td>py</td><td><a class="link" href="WEB3/vote_chain.py" download>Download</a></td></tr>
+                <tr><td>17</td><td>Break Loop</td><td>break_loop</td><td>sol</td><td><a class="link" href="WEB3/break_loop.sol" download>Download</a></td></tr>
+                <tr><td>18</td><td>Function Calling</td><td>func_call</td><td>sol</td><td><a class="link" href="WEB3/func_call.sol" download>Download</a></td></tr>
               </tbody>
             </table>
           </div>
         </div>
 
+        <!-- Updated WDA -->
         <div id="tab-wda" class="tab-panel hidden">
           <div class="card">
             <div class="card-h"><h3>WDA</h3></div>
             <table>
-              <thead><tr><th style="width:6%">#</th><th style="width:64%">Aim</th><th style="width:30%">Code Link</th></tr></thead>
+              <thead>
+                <tr>
+                  <th style="width:14%">Practical No.</th>
+                  <th style="width:22%">Short Name</th>
+                  <th style="width:42%">Meaning / Use</th>
+                  <th style="width:22%">Code File Link</th>
+                </tr>
+              </thead>
               <tbody>
-                <tr><td>1</td><td>Scrape an online E-Commerce Site for Data.</td><td><a class="link" href="WDA/practical1.py" download>Download</a></td></tr>
-                <tr><td>2</td><td>Scrape an online Social Media Site for Data.</td><td><a class="link" href="WDA/practical2.py" download>Download</a></td></tr>
-                <tr><td>3</td><td>Page Rank for link analysis using python.</td><td><a class="link" href="WDA/practical3.py" download>Download</a></td></tr>
-                <tr><td>4</td><td>Perform Spam Classifier.</td><td><a class="link" href="WDA/practical4.py" download>Download</a></td></tr>
-                <tr><td>5</td><td>Text Mining and Webpage Pre-processing.</td><td><a class="link" href="WDA/practical5.py" download>Download</a></td></tr>
-                <tr><td>6</td><td>Apriori Algorithm implementation.</td><td><a class="link" href="WDA/practical6.py" download>Download</a></td></tr>
-                <tr><td>7</td><td>Develop a basic crawler for keywords.</td><td><a class="link" href="WDA/practical7.py" download>Download</a></td></tr>
-                <tr><td>8</td><td>Develop a focused crawler for local search.</td><td><a class="link" href="WDA/practical8.py" download>Download</a></td></tr>
-                <tr><td>9</td><td>Deep search implementation for plagiarism.</td><td><a class="link" href="WDA/practical9.py" download>Download</a></td></tr>
-                <tr><td>10</td><td>Sentiment analysis and visualization.</td><td><a class="link" href="WDA/practical10.py" download>Download</a></td></tr>
+                <tr><td>1</td><td><strong>AMZ-SQL</strong></td><td>Amazon Scraping + Database</td><td><a class="link" href="WDA/amz_sql.py" download>Download</a></td></tr>
+                <tr><td>2</td><td><strong>WEB-SCRAPE</strong></td><td>Web/Social Media Scraping</td><td><a class="link" href="WDA/web_scrape.py" download>Download</a></td></tr>
+                <tr><td>3</td><td><strong>PAGE-RANK</strong></td><td>PageRank Algorithm</td><td><a class="link" href="WDA/page_rank.py" download>Download</a></td></tr>
+                <tr><td>4</td><td><strong>SPAM-ML</strong></td><td>Spam Classifier</td><td><a class="link" href="WDA/spam_ml.py" download>Download</a></td></tr>
+                <tr><td>5</td><td><strong>TEXT-META</strong></td><td>Text Mining + Meta Extraction</td><td><a class="link" href="WDA/text_meta.py" download>Download</a></td></tr>
+                <tr><td>6</td><td><strong>APRIORI</strong></td><td>Frequent Itemset Mining</td><td><a class="link" href="WDA/apriori.py" download>Download</a></td></tr>
+                <tr><td>7</td><td><strong>WEB-CRAWL</strong></td><td>Web Crawler</td><td><a class="link" href="WDA/web_crawl.py" download>Download</a></td></tr>
+                <tr><td>8</td><td><strong>PLAG-DETECT</strong></td><td>Plagiarism Detection</td><td><a class="link" href="WDA/plag_detect.py" download>Download</a></td></tr>
               </tbody>
             </table>
           </div>
@@ -235,7 +265,7 @@
       else { unlockError.classList.remove("hidden"); passwordInput.focus(); passwordInput.select(); }
     }
 
-    lockNow(); // always locked on refresh
+    lockNow();
 
     document.addEventListener("click",(e)=>{
       if(isUnlocked()) return;
