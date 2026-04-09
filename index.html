@@ -8,65 +8,371 @@
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <style>
-    .logo-img {
-  height: 32px;   /* adjust as needed */
-  width: auto;
-  display: block;
-}
-    :root{--orange:#f37726;--blue:#337ab7;--line:#e5e5e5;--text:#333;--muted:#777;--soft2:#fafafa}
+    .logo-img{
+      height:28px;
+      width:auto;
+      display:block;
+    }
+
+    :root{
+      --orange:#f37726;
+      --blue:#337ab7;
+      --line:#e1e1e1;
+      --line-dark:#cfcfcf;
+      --text:#333;
+      --muted:#777;
+      --soft2:#fafafa;
+      --bg:#ededed;
+      --panel:#fff;
+      --head:#f5f5f5;
+      --danger:#d9534f;
+    }
+
     *{box-sizing:border-box}
-    body{margin:0;background:#fff;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;color:var(--text)}
-    .top{height:56px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 16px;background:#fff;position:sticky;top:0;z-index:99}
-    .logo{display:flex;align-items:center;gap:9px;font-size:30px;font-weight:300;color:#555;letter-spacing:.2px;user-select:none}
-    .orbit{width:11px;height:11px;border-radius:50%;background:var(--orange);display:inline-block;transform:translateY(-9px)}
-    .lock-btn{border:1px solid #cfcfcf;background:#fff;border-radius:4px;padding:6px 10px;cursor:pointer;font-size:15px}
-    .layout{display:flex;min-height:calc(100vh - 56px)}
-    .sidebar{width:210px;border-right:1px solid var(--line);background:#fcfcfc;padding:14px 0}
-    .nav-item{display:block;padding:10px 16px;color:#555;text-decoration:none;font-size:14px;border-left:3px solid transparent}
-    .nav-item.active{background:#f2f2f2;border-left-color:var(--orange);font-weight:600}
-    .main{flex:1;padding:14px 20px 28px}
-    .pathbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
-    .path{font-size:13px;color:#666}
-    .actions button{border:1px solid #cfcfcf;border-radius:4px;background:#f5f5f5;padding:6px 10px;font-size:13px;margin-left:6px;cursor:pointer}
-    .actions .new{background:var(--orange);border-color:#d4671f;color:#fff}
-    .toolbar{border:1px solid var(--line);border-bottom:none;border-radius:4px 4px 0 0;background:var(--soft2);padding:8px;display:flex;justify-content:space-between;align-items:center;gap:8px}
-    .toolbar input{height:30px;border:1px solid #cfcfcf;border-radius:4px;padding:0 10px;width:240px;font-size:13px}
-    .panel{border:1px solid var(--line);border-radius:0 0 4px 4px;overflow:hidden;margin-bottom:14px}
-    table{width:100%;border-collapse:collapse;font-size:13px}
-    thead th{background:#fff;color:#666;font-weight:600;border-bottom:1px solid var(--line);text-align:left;padding:9px 10px}
-    tbody td{padding:10px;border-bottom:1px solid #f0f0f0;vertical-align:top}
-    .name{display:flex;align-items:center;gap:8px}
-    .badge{width:16px;height:16px;border-radius:3px;display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff}
-    .b-folder{background:#7f8c8d}.b-note{background:#f39c12}.b-file{background:#3498db}
+
+    body{
+      margin:0;
+      background:var(--bg);
+      font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+      color:var(--text);
+      font-size:13px;
+    }
+
+    .top{
+      height:54px;
+      border-bottom:1px solid var(--line-dark);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:0 16px;
+      background:#f3f3f3;
+      position:sticky;
+      top:0;
+      z-index:99;
+    }
+
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:9px;
+      font-size:22px;
+      font-weight:300;
+      color:#555;
+      letter-spacing:.2px;
+      user-select:none;
+    }
+
+    .lock-btn{
+      border:1px solid #cfcfcf;
+      background:#fff;
+      border-radius:3px;
+      padding:5px 9px;
+      cursor:pointer;
+      font-size:13px;
+      line-height:1;
+    }
+
+    .menu{
+      height:34px;
+      border-bottom:1px solid var(--line-dark);
+      background:#f8f8f8;
+      display:flex;
+      align-items:center;
+      gap:22px;
+      padding:0 18px;
+      font-size:13px;
+    }
+    .menu a{
+      color:#222;
+      text-decoration:none;
+    }
+
+    .layout{
+      max-width:1280px;
+      margin:16px auto;
+      min-height:calc(100vh - 90px);
+      border:1px solid var(--line-dark);
+      background:var(--panel);
+      box-shadow:0 2px 8px rgba(0,0,0,.08);
+      display:flex;
+      flex-direction:column;
+    }
+
+    .sidebar{
+      display:flex;
+      border-bottom:1px solid var(--line);
+      background:#efefef;
+    }
+
+    .nav-item{
+      display:block;
+      padding:10px 16px;
+      color:#555;
+      text-decoration:none;
+      font-size:14px;
+      border-right:1px solid var(--line);
+      border-bottom:2px solid transparent;
+      background:#f6f6f6;
+    }
+
+    .nav-item.active{
+      background:#fff;
+      border-bottom-color:#fff;
+      font-weight:600;
+    }
+
+    .main{
+      flex:1;
+      padding:0;
+    }
+
+    .pathbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:10px 12px;
+      border-bottom:1px solid var(--line);
+      background:#fff;
+    }
+
+    .path{
+      font-size:13px;
+      color:#444;
+    }
+
+    .actions{
+      display:flex;
+      align-items:center;
+      gap:0;
+    }
+
+    .actions button{
+      border:1px solid #cfcfcf;
+      border-right:none;
+      background:#fff;
+      padding:7px 11px;
+      font-size:13px;
+      cursor:pointer;
+      line-height:1.2;
+    }
+    .actions button:last-child{border-right:1px solid #cfcfcf}
+    .actions .new{background:#fff;color:#222}
+    .actions .danger{background:var(--danger);border-color:#c4413c;color:#fff}
+
+    .toolbar{
+      border-bottom:1px solid var(--line);
+      background:#fff;
+      padding:8px 12px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:8px;
+    }
+
+    .toolbar input{
+      height:30px;
+      border:1px solid #cfcfcf;
+      border-radius:3px;
+      padding:0 10px;
+      width:220px;
+      font-size:13px;
+    }
+
+    .panel{
+      border-top:0;
+      overflow:hidden;
+      margin:0;
+      background:#fff;
+    }
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+      font-size:13px;
+    }
+
+    thead th{
+      background:var(--head);
+      color:#555;
+      font-weight:600;
+      border-bottom:1px solid var(--line);
+      text-align:left;
+      padding:8px 10px;
+    }
+
+    tbody td{
+      padding:8px 10px;
+      border-bottom:1px solid #f0f0f0;
+      vertical-align:top;
+    }
+
+    .name{
+      display:flex;
+      align-items:center;
+      gap:8px;
+    }
+
+    .badge{
+      width:15px;
+      height:15px;
+      border-radius:2px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      font-size:9px;
+      font-weight:700;
+      color:#fff;
+      flex-shrink:0;
+    }
+
+    .b-folder{background:#7f8c8d}
+    .b-note{background:#f39c12}
+    .b-file{background:#3498db}
+
     .link{color:var(--blue);text-decoration:none}
     .hidden{display:none !important}
-    .section-title{margin:22px 0 8px;font-size:20px;font-weight:500}
-    .sub{font-size:13px;color:#666;margin-bottom:10px}
-    .card{border:1px solid var(--line);border-radius:4px;overflow:hidden;margin-top:14px}
-    .card-h{padding:10px 12px;background:#fafafa;border-bottom:1px solid var(--line)}
-    .card-h h3{margin:0;font-size:18px;font-weight:500}
-    .switch-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 0}
-    .switch-tab{border:1px solid #d7d7d7;background:#f7f7f7;border-radius:20px;padding:7px 14px;font-size:13px;cursor:pointer}
-    .switch-tab.active{background:#fff3ea;border-color:#f2b183;color:#b45309;font-weight:600}
-    .unlock-modal,.caution-modal{position:fixed;inset:0;background:rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center;z-index:9999}
-    .unlock-dialog,.caution-dialog{width:min(92vw,380px);background:#fff;border:1px solid #dedede;border-radius:10px;padding:16px}
-    .unlock-input{width:100%;height:38px;border:1px solid #cfcfcf;border-radius:6px;padding:0 10px;font-size:14px}
-    .unlock-actions,.caution-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:14px}
-    .u-btn{border:1px solid #cfcfcf;background:#f5f5f5;border-radius:6px;padding:7px 12px;font-size:13px;cursor:pointer}
-    .u-btn-primary{background:#f37726;border-color:#d4671f;color:#fff}
-    .unlock-error{margin-top:8px;color:#c62828;font-size:12px}
+
+    .section-title{
+      margin:16px 12px 6px;
+      font-size:18px;
+      font-weight:500;
+    }
+
+    .sub{
+      font-size:13px;
+      color:#666;
+      margin:0 12px 8px;
+    }
+
+    .card{
+      border:1px solid var(--line);
+      border-radius:3px;
+      overflow:hidden;
+      margin:10px 12px 14px;
+      background:#fff;
+    }
+
+    .card-h{
+      padding:8px 10px;
+      background:#f7f7f7;
+      border-bottom:1px solid var(--line);
+    }
+
+    .card-h h3{
+      margin:0;
+      font-size:16px;
+      font-weight:500;
+    }
+
+    .switch-tabs{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      margin:8px 12px 0;
+    }
+
+    .switch-tab{
+      border:1px solid #d7d7d7;
+      background:#f7f7f7;
+      border-radius:16px;
+      padding:5px 12px;
+      font-size:12px;
+      cursor:pointer;
+    }
+
+    .switch-tab.active{
+      background:#fff3ea;
+      border-color:#f2b183;
+      color:#b45309;
+      font-weight:600;
+    }
+
+    .unlock-modal,.caution-modal{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,.45);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      z-index:9999;
+    }
+
+    .unlock-dialog,.caution-dialog{
+      width:min(92vw,380px);
+      background:#fff;
+      border:1px solid #dedede;
+      border-radius:8px;
+      padding:16px;
+    }
+
+    .unlock-input{
+      width:100%;
+      height:36px;
+      border:1px solid #cfcfcf;
+      border-radius:5px;
+      padding:0 10px;
+      font-size:14px;
+    }
+
+    .unlock-actions,.caution-actions{
+      display:flex;
+      justify-content:flex-end;
+      gap:8px;
+      margin-top:14px;
+    }
+
+    .u-btn{
+      border:1px solid #cfcfcf;
+      background:#f5f5f5;
+      border-radius:5px;
+      padding:7px 12px;
+      font-size:13px;
+      cursor:pointer;
+    }
+
+    .u-btn-primary{
+      background:#f37726;
+      border-color:#d4671f;
+      color:#fff;
+    }
+
+    .unlock-error{
+      margin-top:8px;
+      color:#c62828;
+      font-size:12px;
+    }
+
     .muted{color:#888}
-    .footer{padding:14px 0 2px;color:#9a9a9a;font-size:12px;text-align:center}
+
+    .footer{
+      padding:10px 0 12px;
+      color:#9a9a9a;
+      font-size:12px;
+      text-align:center;
+    }
+
+    @media (max-width: 900px){
+      .layout{margin:8px}
+      .menu{gap:12px;padding:0 12px}
+      .actions button{padding:6px 8px;font-size:12px}
+      .toolbar input{width:150px}
+    }
   </style>
 </head>
 <body>
   <header class="top">
     <div class="logo">
-  <img src="logo.png" alt="Logo" class="logo-img">
-
-</div>
+      <img src="logo.png" alt="Logo" class="logo-img">
+    </div>
     <button id="lockBtn" class="lock-btn">🔒</button>
   </header>
+
+  <div class="menu">
+    <a href="#" class="prelock-action">File</a>
+    <a href="#" class="prelock-action">View</a>
+    <a href="#" class="prelock-action">Settings</a>
+    <a href="#" class="prelock-action">Help</a>
+  </div>
 
   <div class="layout">
     <aside class="sidebar">
@@ -79,15 +385,19 @@
       <div class="pathbar">
         <div class="path"><a class="prelock-action link" href="#">Home</a></div>
         <div class="actions">
-          <button class="prelock-action" type="button">Upload</button>
-          <button class="new prelock-action" type="button">New</button>
+          <button class="prelock-action" type="button">Open</button>
+          <button class="prelock-action" type="button">Download</button>
+          <button class="prelock-action" type="button">Rename</button>
+          <button class="prelock-action" type="button">Duplicate</button>
+          <button class="danger prelock-action" type="button">Move to Trash</button>
         </div>
       </div>
 
       <div class="toolbar">
-        <div class="actions" style="margin-left:-6px;">
-          <button class="prelock-action" type="button">Refresh</button>
-          <button class="prelock-action" type="button">Download</button>
+        <div class="actions" style="margin-left:0;">
+          <button class="prelock-action" type="button">⏷ New</button>
+          <button class="prelock-action" type="button">⤴ Upload</button>
+          <button class="prelock-action" type="button">⟳</button>
         </div>
         <input class="prelock-action" type="text" placeholder="Filter files" />
       </div>
@@ -96,7 +406,16 @@
         <table>
           <thead><tr><th style="width:55%">Name</th><th style="width:25%">Last Modified</th><th style="width:20%">Size</th></tr></thead>
           <tbody>
-            <tr><td><div class="name"><span class="badge b-folder">D</span><a class="link prelock-action" href="#">workspace</a></div></td><td class="muted">today</td><td class="muted">—</td></tr>
+            <tr><td><div class="name"><span class="badge b-folder">D</span><a class="link prelock-action" href="#">Desktop</a></div></td><td class="muted">7 months ago</td><td class="muted">—</td></tr>
+            <tr><td><div class="name"><span class="badge b-folder">D</span><a class="link prelock-action" href="#">Documents</a></div></td><td class="muted">last year</td><td class="muted">—</td></tr>
+            <tr><td><div class="name"><span class="badge b-folder">D</span><a class="link prelock-action" href="#">Downloads</a></div></td><td class="muted">6 seconds ago</td><td class="muted">—</td></tr>
+            <tr><td><div class="name"><span class="badge b-folder">D</span><a class="link prelock-action" href="#">Projects</a></div></td><td class="muted">2 days ago</td><td class="muted">—</td></tr>
+            <tr><td><div class="name"><span class="badge b-folder">D</span><a class="link prelock-action" href="#">Datasets</a></div></td><td class="muted">5 months ago</td><td class="muted">—</td></tr>
+            <tr><td><div class="name"><span class="badge b-folder">D</span><a class="link prelock-action" href="#">Notebooks</a></div></td><td class="muted">3 days ago</td><td class="muted">—</td></tr>
+            <tr><td><div class="name"><span class="badge b-folder">D</span><a class="link prelock-action" href="#">Assignments</a></div></td><td class="muted">4 months ago</td><td class="muted">—</td></tr>
+            <tr><td><div class="name"><span class="badge b-folder">D</span><a class="link prelock-action" href="#">Workspace</a></div></td><td class="muted">today</td><td class="muted">—</td></tr>
+            <tr><td><div class="name"><span class="badge b-folder">D</span><a class="link prelock-action" href="#">Images</a></div></td><td class="muted">last year</td><td class="muted">—</td></tr>
+            <tr><td><div class="name"><span class="badge b-folder">D</span><a class="link prelock-action" href="#">Backup</a></div></td><td class="muted">25 days ago</td><td class="muted">—</td></tr>
             <tr><td><div class="name"><span class="badge b-note">NB</span><a class="link prelock-action" href="#">home.ipynb</a></div></td><td class="muted">today</td><td class="muted">18 KB</td></tr>
             <tr><td><div class="name"><span class="badge b-file">PY</span><a class="link prelock-action" href="#">helper.py</a></div></td><td class="muted">today</td><td class="muted">3 KB</td></tr>
           </tbody>
