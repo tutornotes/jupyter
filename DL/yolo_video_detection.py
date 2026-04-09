@@ -2,7 +2,7 @@ import kagglehub
 import os
 import cv2
 import numpy as np
-from google.colab.patches import cv2_imshow
+import matplotlib.pyplot as plt   
 
 # a) Load dataset
 path = kagglehub.dataset_download("aruchomu/data-for-yolo-v3-kernel")
@@ -98,7 +98,10 @@ while True:
                 2
             )
 
-    cv2_imshow(frame)
+    # replaced cv2_imshow
+    plt.imshow(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
+    plt.axis('off')
+    plt.show()
 
     # Press 'q' to exit
     if cv2.waitKey(1) & 0xFF == ord('q'):

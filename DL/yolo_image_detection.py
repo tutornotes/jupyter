@@ -2,7 +2,7 @@ import kagglehub
 import os
 import cv2
 import numpy as np
-from google.colab.patches import cv2_imshow
+import matplotlib.pyplot as plt
 
 # a) Load dataset
 path = kagglehub.dataset_download("aruchomu/data-for-yolo-v3-kernel")
@@ -12,7 +12,7 @@ print("Dataset path:", path)
 weights_path = os.path.join(path, "yolov3.weights")
 names_path = os.path.join(path, "coco.names")
 
-# FIX: Download cfg if missing
+# Download cfg if missing
 if not os.path.exists("yolov3.cfg"):
     import urllib.request
     urllib.request.urlretrieve(
@@ -98,7 +98,11 @@ if len(indexes) > 0:
             2
         )
 
-# Display result
-cv2_imshow(img)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+# f) Display result (Jupyter compatible)
+img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+
+plt.figure(figsize=(8,6))
+plt.imshow(img_rgb)
+plt.axis('off')
+plt.title("YOLO Object Detection")
+plt.show()
