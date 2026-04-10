@@ -15,13 +15,11 @@
     }
 
     :root{
-      --orange:#f37726;
       --blue:#337ab7;
       --line:#e1e1e1;
       --line-dark:#cfcfcf;
       --text:#333;
       --muted:#777;
-      --soft2:#fafafa;
       --bg:#ededed;
       --panel:#fff;
       --head:#f5f5f5;
@@ -156,7 +154,6 @@
       line-height:1.2;
     }
     .actions button:last-child{border-right:1px solid #cfcfcf}
-    .actions .new{background:#fff;color:#222}
     .actions .danger{background:var(--danger);border-color:#c4413c;color:#fff}
 
     .toolbar{
@@ -262,29 +259,6 @@
       margin:0;
       font-size:16px;
       font-weight:500;
-    }
-
-    .switch-tabs{
-      display:flex;
-      gap:8px;
-      flex-wrap:wrap;
-      margin:8px 12px 0;
-    }
-
-    .switch-tab{
-      border:1px solid #d7d7d7;
-      background:#f7f7f7;
-      border-radius:16px;
-      padding:5px 12px;
-      font-size:12px;
-      cursor:pointer;
-    }
-
-    .switch-tab.active{
-      background:#fff3ea;
-      border-color:#f2b183;
-      color:#b45309;
-      font-weight:600;
     }
 
     .unlock-modal,.caution-modal{
@@ -424,93 +398,10 @@
 
       <section id="protectedContent" class="hidden">
         <h2 class="section-title">Unlocked Content</h2>
-        <div class="sub">Switch between tables quickly.</div>
+        <div class="sub">WDA practical table</div>
 
-        <div class="switch-tabs">
-          <button class="switch-tab active" data-target="tab-dl" type="button">DL</button>
-          <button class="switch-tab" data-target="tab-web3" type="button">WEB3</button>
-          <button class="switch-tab" data-target="tab-wda" type="button">WDA</button>
-        </div>
-
-        <!-- DL -->
-        <div id="tab-dl" class="tab-panel">
-          <div class="card">
-            <div class="card-h"><h3>DL</h3></div>
-            <table>
-              <thead>
-                <tr>
-                  <th style="width:22%">Topic</th>
-                  <th style="width:20%">Short Name</th>
-                  <th style="width:14%">Sub-Question</th>
-                  <th style="width:24%">Quick Recall Name</th>
-                  <th style="width:20%">Link</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr><td>Feed Forward NN</td><td>FFNN Optimizers</td><td>Q1</td><td>SGD vs Adam</td><td><a class="link" href="DL/sgd_adam.py" download>Download</a></td></tr>
-                <tr><td>Feed Forward NN</td><td>FFNN Optimizers</td><td>Q2</td><td>SGD vs RMSProp</td><td><a class="link" href="DL/sgd_rmsprop.py" download>Download</a></td></tr>
-                <tr><td>Feed Forward NN</td><td>FFNN Optimizers</td><td>Q3</td><td>Adam vs RMSProp</td><td><a class="link" href="DL/adam_rmsprop.py" download>Download</a></td></tr>
-                <tr><td>Regularization</td><td>Overfitting Control</td><td>Q1</td><td>L2 Regularization</td><td><a class="link" href="DL/l2_regularization.py" download>Download</a></td></tr>
-                <tr><td>Regularization</td><td>Overfitting Control</td><td>Q2</td><td>Dropout</td><td><a class="link" href="DL/dropout_regularization.py" download>Download</a></td></tr>
-                <tr><td>CNN Classification</td><td>CNN Classification</td><td>Q1</td><td>CIFAR CNN</td><td><a class="link" href="DL/cifar_cnn.py" download>Download</a></td></tr>
-                <tr><td>CNN Classification</td><td>CNN Classification</td><td>Q2</td><td>MNIST CNN</td><td><a class="link" href="DL/mnist_cnn.py" download>Download</a></td></tr>
-                <tr><td>CNN Classification</td><td>CNN Classification</td><td>Q3</td><td>Fashion CNN</td><td><a class="link" href="DL/fashion_cnn.py" download>Download</a></td></tr>
-                <tr><td>Autoencoder</td><td>Data Reconstruction</td><td>Q1</td><td>MNIST Autoencoder</td><td><a class="link" href="DL/mnist_autoencoder.py" download>Download</a></td></tr>
-                <tr><td>Autoencoder</td><td>Data Reconstruction</td><td>Q2</td><td>CIFAR Autoencoder</td><td><a class="link" href="DL/cifar_autoencoder.py" download>Download</a></td></tr>
-                <tr><td>Digit Recognition</td><td>MNIST FFNN</td><td>Q1</td><td>Digit Recognition</td><td><a class="link" href="DL/mnist_ffnn.py" download>Download</a></td></tr>
-                <tr><td>Transfer Learning</td><td>VGG16 Transfer</td><td>Q1</td><td>Cats vs Dogs</td><td><a class="link" href="DL/vgg16_transfer_learning.py" download>Download</a></td></tr>
-                <tr><td>GAN</td><td>GAN Generation</td><td>Q1</td><td>MNIST GAN</td><td><a class="link" href="DL/mnist_gan.py" download>Download</a></td></tr>
-                <tr><td>GAN</td><td>GAN Generation</td><td>Q2</td><td>Fashion GAN</td><td><a class="link" href="DL/fashion_gan.py" download>Download</a></td></tr>
-                <tr><td>RNN</td><td>Time Series RNN</td><td>Q1</td><td>Rainfall RNN</td><td><a class="link" href="DL/rainfall_rnn.py" download>Download</a></td></tr>
-                <tr><td>RNN</td><td>Time Series RNN</td><td>Q2</td><td>Temperature RNN</td><td><a class="link" href="DL/temperature_rnn.py" download>Download</a></td></tr>
-                <tr><td>LSTM</td><td>Sentiment LSTM</td><td>Q1</td><td>NLP Sentiment</td><td><a class="link" href="DL/sentiment_lstm.py" download>Download</a></td></tr>
-                <tr><td>YOLO</td><td>Object Detection</td><td>Q1</td><td>YOLO Image</td><td><a class="link" href="DL/yolo_image_detection.py" download>Download</a></td></tr>
-                <tr><td>YOLO</td><td>Object Detection</td><td>Q2</td><td>YOLO Video</td><td><a class="link" href="DL/yolo_video_detection.py" download>Download</a></td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <!-- WEB3 -->
-        <div id="tab-web3" class="tab-panel hidden">
-          <div class="card">
-            <div class="card-h"><h3>WEB3</h3></div>
-            <table>
-              <thead>
-                <tr>
-                  <th style="width:10%">No.</th>
-                  <th style="width:40%">Practical Name (Short Idea)</th>
-                  <th style="width:22%">Short Name</th>
-                  <th style="width:10%">Lang</th>
-                  <th style="width:18%">Link</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr><td>1</td><td>Blockchain + Validation</td><td>block_valid</td><td>py</td><td><a class="link" href="WEB3/block_valid.py" download>Download</a></td></tr>
-                <tr><td>2</td><td>Solidity Variables</td><td>sol_var</td><td>sol</td><td><a class="link" href="WEB3/sol_var.sol" download>Download</a></td></tr>
-                <tr><td>3</td><td>Transactions + Blockchain</td><td>txn_query</td><td>py</td><td><a class="link" href="WEB3/txn_query.py" download>Download</a></td></tr>
-                <tr><td>4</td><td>Solidity Operators</td><td>sol_ops</td><td>sol</td><td><a class="link" href="WEB3/sol_ops.sol" download>Download</a></td></tr>
-                <tr><td>5</td><td>Asset Transfer App</td><td>asset_transfer</td><td>py</td><td><a class="link" href="WEB3/asset_transfer.py" download>Download</a></td></tr>
-                <tr><td>6</td><td>While Loop Array Init</td><td>while_array</td><td>sol</td><td><a class="link" href="WEB3/while_array.sol" download>Download</a></td></tr>
-                <tr><td>7</td><td>Fitness Rewards System</td><td>reward_chain</td><td>py</td><td><a class="link" href="WEB3/reward_chain.py" download>Download</a></td></tr>
-                <tr><td>8</td><td>Do-While Loop</td><td>do_while</td><td>sol</td><td><a class="link" href="WEB3/do_while.sol" download>Download</a></td></tr>
-                <tr><td>9</td><td>Reward Tracking Web App</td><td>reward_trace</td><td>py</td><td><a class="link" href="WEB3/reward_trace.py" download>Download</a></td></tr>
-                <tr><td>10</td><td>While Loop Sequential Init</td><td>while_init</td><td>sol</td><td><a class="link" href="WEB3/while_init.sol" download>Download</a></td></tr>
-                <tr><td>11</td><td>Car Auction System</td><td>car_auction</td><td>py</td><td><a class="link" href="WEB3/car_auction.py" download>Download</a></td></tr>
-                <tr><td>12</td><td>If Condition</td><td>if_check</td><td>sol</td><td><a class="link" href="WEB3/if_check.sol" download>Download</a></td></tr>
-                <tr><td>13</td><td>IoT Asset Tracking</td><td>iot_track</td><td>py</td><td><a class="link" href="WEB3/iot_track.py" download>Download</a></td></tr>
-                <tr><td>14</td><td>If-Else Condition</td><td>if_else</td><td>sol</td><td><a class="link" href="WEB3/if_else.sol" download>Download</a></td></tr>
-                <tr><td>15</td><td>Global Finance App</td><td>finance_chain</td><td>py</td><td><a class="link" href="WEB3/finance_chain.py" download>Download</a></td></tr>
-                <tr><td>16</td><td>Voting Application</td><td>vote_chain</td><td>py</td><td><a class="link" href="WEB3/vote_chain.py" download>Download</a></td></tr>
-                <tr><td>17</td><td>Break Loop</td><td>break_loop</td><td>sol</td><td><a class="link" href="WEB3/break_loop.sol" download>Download</a></td></tr>
-                <tr><td>18</td><td>Function Calling</td><td>func_call</td><td>sol</td><td><a class="link" href="WEB3/func_call.sol" download>Download</a></td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <!-- Updated WDA -->
-        <div id="tab-wda" class="tab-panel hidden">
+        <!-- Only WDA table -->
+        <div id="tab-wda" class="tab-panel">
           <div class="card">
             <div class="card-h"><h3>WDA</h3></div>
             <table>
@@ -619,18 +510,6 @@
     passwordInput.addEventListener("keydown",(e)=>{ if(e.key==="Enter") handleUnlockSubmit(); if(e.key==="Escape") closeUnlockModal(); });
     closeCaution.addEventListener("click",closeCautionModal);
     cautionModal.addEventListener("click",(e)=>{ if(e.target===cautionModal) closeCautionModal(); });
-
-    const tabs=document.querySelectorAll(".switch-tab");
-    const panels=document.querySelectorAll(".tab-panel");
-    tabs.forEach(tab=>{
-      tab.addEventListener("click",()=>{
-        tabs.forEach(t=>t.classList.remove("active"));
-        panels.forEach(p=>p.classList.add("hidden"));
-        tab.classList.add("active");
-        document.getElementById(tab.dataset.target).classList.remove("hidden");
-        if(isUnlocked()) startInactivityTimer();
-      });
-    });
   </script>
 </body>
 </html>
